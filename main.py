@@ -8,6 +8,14 @@ def main():
     letter_count = get_letters(book)
     letter_list = dict_sort(letter_count)
     
+    print_report(num_words, letter_list)
+   
+   
+def get_book_text(path):
+    with open(path) as book:
+        return book.read()
+        
+def print_report(num_words, letter_list):
     print("============ BOOKBOT ============")
     print("Analyzing book found at books/frankenstein.txt...")
     print("----------- Word Count ----------")
@@ -18,10 +26,6 @@ def main():
         print(f"{i["char"]}: {i["num"]}")
     print("============= END ===============")
 
-def get_book_text(path):
-    with open(path) as book:
-        return book.read()
-        
 
 
 main()
