@@ -18,13 +18,18 @@ def get_letters(book):
             
     return character_count
 
+  
 
 def dict_sort(letter_count):
+
+    def sort_on(dict):
+        return dict["num"]
     count = 0
     dict_list = []
-    for i in letter_count:
-        count += 1
-        print(i)
-        print(count)
 
-    return
+    for i in letter_count:
+        dict_list.append({"char":i, "num":letter_count[i]})
+
+    dict_list.sort(reverse=True, key=sort_on)
+
+    return(dict_list)
